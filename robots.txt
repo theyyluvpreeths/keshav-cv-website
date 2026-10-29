@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://theyyluvpreeths.github.io/keshav-cv-website/sitemap.xml
