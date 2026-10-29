@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Isiqalo Med",
+    "type": "Full-stack web application",
+    "year": "2026",
+    "flagship": true,
+    "featured": true,
+    "summary": "A secure medical case registry for South African practitioners. Clinicians register cases with their STL, DICOM and X-ray files, patient identity data is encrypted at rest, and records export as JSON, CSV, PDF or ZIP, with every sensitive action written to a tamper-evident audit log.",
+    "tech": [
+      "TypeScript",
+      "React 19",
+      "Vite",
+      "Node.js",
+      "Express",
+      "SQLite",
+      "Azure Blob Storage",
+      "Docker"
+    ],
+    "image": "assets/isiqalo-med-extract.webp",
+    "imageAlt": "Isiqalo Med data extraction screen listing five demo patient records with condition, priority and date logged",
+    "caseStudy": "isiqalo-med.html",
+    "repo": "https://github.com/theyyluvpreeths/ISIQALO-MED",
+    "live": null,
+    "_todo": "Add a live demo URL if one is ever hosted. The repo currently returns 404 to the public (private)."
+  },
+  {
+    "name": "Laser Air Conditioning (Pty) Ltd",
+    "type": "Business website",
+    "year": "2026",
+    "featured": true,
+    "summary": "Website for a KwaZulu-Natal HVAC company: commercial, industrial and residential services, maintenance contracts, the brands it supplies, notable projects, guarantee and warranty, and contact details with business hours.",
+    "tech": [
+      "HTML",
+      "CSS"
+    ],
+    "image": "assets/laser-air-conditioning.webp",
+    "imageAlt": "Laser Air Conditioning home page: a large headline over a photo of the Durban beachfront, with Get a free quote and Explore services buttons",
+    "repo": "https://github.com/theyyluvpreeths/Laser-air-conditioning-PTY-LTD",
+    "live": "https://theyyluvpreeths.github.io/Laser-air-conditioning-PTY-LTD/"
+  },
+  {
+    "name": "Rejuv Aesthetics",
+    "type": "Business website",
+    "year": "2026",
+    "featured": true,
+    "summary": "Three-page site for Rejuvenation Aesthetics, a dental aesthetics practice: a home page explaining why to choose the practice, a products page with a three-step skincare routine and category filters, and a contact page. Vanilla JavaScript adds the mobile menu, product filtering and scroll fade-ins.",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "image": "assets/rejuv-aesthetics.webp",
+    "imageAlt": "Rejuv Aesthetics home page with the Rejuvenation Dentistry logo, the headline Rejuvenation Aesthetics and Explore products and Contact us buttons",
+    "repo": "https://github.com/theyyluvpreeths/rejuv_Aesthetics",
+    "live": null,
+    "_todo": "GitHub Pages is enabled on this repo but returns 404 (the site sits in a rejuv_Aesthetics/ subfolder). Fix Pages and add the live URL here."
+  },
+  {
+    "name": "This portfolio",
+    "type": "Personal website",
+    "year": "2026",
+    "featured": false,
+    "summary": "The site you are on. Hand-written HTML, CSS and vanilla JavaScript modules with no framework, a project list driven by one JSON file, dark and light themes that remember your choice, and a CV that prints cleanly. Hosted free on GitHub Pages.",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "JSON",
+      "GitHub Pages"
+    ],
+    "image": "assets/portfolio.webp",
+    "repo": "https://github.com/theyyluvpreeths/keshav-cv-website",
+    "live": "https://theyyluvpreeths.github.io/keshav-cv-website/",
+    "imageAlt": "Home page of this portfolio: name, headline, buttons and portrait on a navy background"
+  }
+]
