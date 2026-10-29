@@ -78,7 +78,6 @@ Note: crawlers only read `robots.txt` at a domain root, so this one is informati
 
 Search the code for `TODO`:
 
-- LinkedIn URL (`linkedin.com/in/TODO`, every page)
 - Start date at Isiqalo Industries (`cv.html`)
 - Rejuv Aesthetics and Isiqalo Med live URLs (`data/projects.json`)
 - Your own wording for the Isiqalo Med role and lessons (`isiqalo-med.html`)
