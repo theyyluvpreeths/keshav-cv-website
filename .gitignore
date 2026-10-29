@@ -1,0 +1,17 @@
+# Dependencies and secrets
+node_modules/
+.env
+.env.*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# Tool output
+.taste-skill/
+
+# Personal or source files kept out of the public repo
+assets/WhatsApp Image*.jpeg
+assets/Isiqalo_Med_Technical_Documentation*.pdf
