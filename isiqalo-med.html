@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Isiqalo Med case study | Keshav Aditya Preethlal</title>
+  <meta name="description" content="Case study: Isiqalo Med, a secure medical case registry for South African practitioners, built with TypeScript, React, Node.js, Express and SQLite.">
+  <link rel="canonical" href="https://theyyluvpreeths.github.io/keshav-cv-website/isiqalo-med.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Isiqalo Med: a secure medical case registry">
+  <meta property="og:description" content="How I built a POPIA-minded clinical case registry with encrypted patient data, consent, audit trails and data export.">
+  <meta property="og:url" content="https://theyyluvpreeths.github.io/keshav-cv-website/isiqalo-med.html">
+  <meta property="og:image" content="https://theyyluvpreeths.github.io/keshav-cv-website/assets/isiqalo-med-extract.webp">
+  <meta property="og:image:alt" content="Isiqalo Med data extraction screen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#14213d">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="wrap nav" aria-label="Main">
+      <a class="brand" href="index.html">Keshav <span>Preethlal</span></a>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="isiqalo-med.html" aria-current="page">Isiqalo Med</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="icon-btn theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-head" aria-labelledby="page-title">
+      <div class="wrap hero-grid">
+        <div data-reveal>
+          <h1 id="page-title">Isiqalo Med</h1>
+          <p class="lead">A secure medical case registry for South African practitioners and their patients. <em>Isiqalo</em> is isiZulu for “the beginning”.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://github.com/theyyluvpreeths/ISIQALO-MED" rel="noopener">View source on GitHub</a>
+            <!-- TODO: add a "Live demo" button here if a hosted demo ever exists. None exists today. -->
+            <a class="btn btn--ghost" href="#screenshots">See screenshots</a>
+          </div>
+        </div>
+        <dl class="facts" style="--surface: rgba(255,255,255,.08); --muted: #c4cee0">
+          <div><dt>My role</dt><dd>Project lead and developer</dd></div>
+          <div><dt>Timeline</dt><dd>June 2026 to present</dd></div>
+          <div><dt>Stack</dt><dd>TypeScript, React, Node.js, Express, SQLite</dd></div>
+          <div><dt>Status</dt><dd>Early stage, security-hardened, not yet clinically deployed</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="overview" aria-labelledby="overview-title">
+      <div class="wrap split" data-reveal>
+        <h2 id="overview-title">Overview</h2>
+        <div class="prose">
+          <p class="lead">Isiqalo Med gives every clinical case one secure home.</p>
+          <p>Practitioners register a case with its condition, treatment, notes and patient details, attach the heavy files that go with it (STL scans, DICOM, X-rays, PDFs and images), and share it with colleagues. Patient identity data is encrypted before it is stored, every read and change is written to a tamper-evident audit log, and records can be exported as JSON, CSV, PDF or ZIP. Patients get their own login to link to, view and download their own records.</p>
+          <p>It is built for South African healthcare: practitioners register with an HPCSA number and practice number, records carry medical-aid details, and the privacy design follows POPIA and the HPCSA record-keeping guidelines.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="problem" aria-labelledby="problem-title">
+      <div class="wrap cols-2" data-reveal>
+        <div>
+          <h2 id="problem-title">The problem it solves</h2>
+          <p class="lead">A patient’s scans live in an inbox, their notes on a USB stick and their history in a chat app.</p>
+          <p>Clinical cases, especially ones with imaging and 3D scan files, end up scattered. That makes them hard to find, hard to share safely and hard to account for when something goes wrong. Isiqalo Med puts the case, its files, the conversation about it and the record of who saw it in one place.</p>
+        </div>
+        <div>
+          <h2>Who it is for</h2>
+          <ul class="feature-list" style="grid-template-columns:1fr">
+            <li><strong>Practitioners</strong>Register, then wait for an administrator to verify their HPCSA number before they can touch patient data. They see only the patients assigned to them.</li>
+            <li><strong>Patients</strong>Link to their records with ID number, surname and date of birth, then view them, download their data or ask for their account to be deleted.</li>
+            <li><strong>Administrators</strong>Verify practitioners, see all records and check the integrity of the audit log.</li>
+            <li><strong>Viewers</strong>Read-only access to de-identified records, with no documents.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <h2 id="features-title">Key features</h2>
+        <ul class="feature-list" data-reveal>
+          <li><strong>Case registration with files</strong>Organisation, facility type, one of 21 medicine categories, condition, treatment and notes, plus up to 10 files per upload (STL, DICOM, X-ray, PDF, images) of up to 250 MB each.</li>
+          <li><strong>Encryption at rest</strong>Names, ID numbers, contact details, medical-aid numbers, notes and history are encrypted with AES-256-GCM. A keyed lookup hash finds ID numbers without decrypting every row.</li>
+          <li><strong>Role-based access</strong>Per-record authorisation checks the caller’s role and their link to each patient, tested by an automated role-by-endpoint matrix.</li>
+          <li><strong>Collaboration</strong>Case comments and private messages between colleagues and their own patients.</li>
+          <li><strong>Data extraction</strong>Export selected patients as JSON, CSV, PDF with embedded images, or a ZIP with a clinical PDF report and the raw files.</li>
+          <li><strong>Tamper-evident audit log</strong>Every read and change of patient data is logged in an append-only, SHA-256 hash-chained table that admins can verify.</li>
+          <li><strong>Consent and patient rights (POPIA)</strong>Recorded patient consent on every new record, a versioned privacy notice, opt-in marketing, “download my data” and account deletion requests.</li>
+          <li><strong>Secure sign-in</strong>Passwords of 12 or more characters, per-account lockout after 5 failures, optional two-factor authentication (TOTP) and 1-hour sessions re-checked on every request.</li>
+          <li><strong>Safe document links</strong>Files are streamed through signed links that expire after 10 minutes, never through raw storage URLs.</li>
+          <li><strong>Retention and backups</strong>Soft delete with destruction after the HPCSA retention period, and encrypted, rotated backups with a tested restore.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="stack" aria-labelledby="stack-title">
+      <div class="wrap">
+        <h2 id="stack-title">Tech stack</h2>
+        <div class="cols-3" data-reveal>
+          <div class="panel"><h3>Front end</h3><ul class="tags"><li>React 19</li><li>Vite 8</li><li>TypeScript</li><li>lucide-react</li><li>ESLint</li></ul></div>
+          <div class="panel"><h3>Back end</h3><ul class="tags"><li>Node.js 22</li><li>Express 4</li><li>TypeScript 5</li><li>SQLite</li><li>Azure Blob Storage</li><li>pdfkit</li><li>archiver</li><li>winston</li></ul></div>
+          <div class="panel"><h3>Security and delivery</h3><ul class="tags"><li>helmet</li><li>bcrypt</li><li>JWT</li><li>zod</li><li>Docker</li><li>nginx</li><li>GitHub Actions</li><li>Playwright and axe-core</li><li>gitleaks</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="role" aria-labelledby="role-title">
+      <div class="wrap split" data-reveal>
+        <h2 id="role-title">My role</h2>
+        <div class="prose">
+          <!-- TODO: confirm this description of your role and add anything you did that is missing (e.g. client meetings, branding). -->
+          <p class="lead">I led Isiqalo Med from planning through to a working product.</p>
+          <ul>
+            <li>Gathered requirements and planned the work around South African rules: HPCSA registration, medical aids and POPIA.</li>
+            <li>Designed the interface and built the React front end with views for sign-in, dashboard, case upload, browsing, management, extraction, messages and settings.</li>
+            <li>Built the Express and TypeScript API, the SQLite data model and the file storage layer.</li>
+            <li>Hardened it for security and privacy, then tested it: 167 automated API checks and 41 keyboard and axe-core accessibility checks run in CI.</li>
+            <li>Wrote the documentation, including the compliance map and every configurable limit.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="structure" aria-labelledby="structure-title">
+      <div class="wrap split" data-reveal>
+        <div>
+          <h2 id="structure-title">Codebase structure</h2>
+          <p>A layered back end (routes, controllers, repositories, then the database and services) and a single-page React app, shipped together in one Docker image behind an nginx proxy.</p>
+          <p class="muted">Around 124 files in the repository, all application code in TypeScript.</p>
+        </div>
+        <pre class="tree" tabindex="0" aria-label="Folder structure"><code>ISIQALO-MED/
+├── backend/src/
+│   ├── app.ts            Express setup, security headers
+│   ├── routes/           all API routes and their guards
+│   ├── controllers/      auth, patients, extraction, chat,
+│   │                     settings, admin, consent, 2FA
+│   ├── middleware/       JWT auth, patient access, rate limits
+│   ├── repositories/     database access layer
+│   ├── services/         encryption, storage, audit chain,
+│   │                     retention, TOTP, backups
+│   ├── cli/              create-user, retention, backup, restore
+│   └── config/           schema, migrations, limits, logger
+├── frontend/src/
+│   ├── App.tsx           shell and role-aware navigation
+│   ├── views/            Auth, Dashboard, Upload, Extract,
+│   │                     Browse, Manage, Messages, Settings
+│   └── utils/            api.ts, a11y.ts, consent.ts
+├── deploy/nginx/         reverse proxy limits, HTTPS-ready
+├── scripts/              API smoke tests, accessibility tests
+├── docs/                 decisions, compliance, ops, security
+├── Dockerfile
+└── docker-compose.yml</code></pre>
+      </div>
+    </section>
+
+    <section class="section" id="screenshots" aria-labelledby="shots-title">
+      <div class="wrap">
+        <h2 id="shots-title">Screenshots</h2>
+        <p class="lead">Every screen below uses synthetic demo data. Select a screenshot to enlarge it.</p>
+        <div class="gallery" data-reveal>
+          <figure class="shot--wide">
+            <button class="shot" type="button"><img src="assets/isiqalo-med-dashboard.webp" width="1600" height="477" loading="lazy" decoding="async" alt="Practitioner dashboard: a table of recent clinical records with patient ID, name, condition, institution and upload date, beside Quick actions and a privacy panel"></button>
+            <figcaption>Practitioner dashboard with recent records and quick actions.</figcaption>
+          </figure>
+          <figure>
+            <button class="shot" type="button"><img src="assets/isiqalo-med-upload.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Clinical record upload form with treatment notes, two attached files (a panoramic X-ray and a lower jaw STL scan) and a required patient consent checkbox"></button>
+            <figcaption>Uploading a case: files attached and patient consent required.</figcaption>
+          </figure>
+          <figure>
+            <button class="shot" type="button"><img src="assets/isiqalo-med-extract.webp" width="1600" height="707" loading="lazy" decoding="async" alt="Data extraction console with search, hospital, category and medical aid filters, and a selectable list of five patients"></button>
+            <figcaption>The extraction console for exporting selected records.</figcaption>
+          </figure>
+          <figure>
+            <button class="shot" type="button"><img src="assets/isiqalo-med-audit.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Settings page with privacy consent, Download my data and Delete my account buttons, above an audit log of extractions, record views and document downloads"></button>
+            <figcaption>Privacy controls and the audit log of every access.</figcaption>
+          </figure>
+          <figure>
+            <button class="shot" type="button"><img src="assets/isiqalo-med-verification.webp" width="1600" height="467" loading="lazy" decoding="async" alt="Admin practitioner verification tab showing a practitioner awaiting approval with HPCSA number, practice, email and Approve or Reject buttons"></button>
+            <figcaption>Admins verify each practitioner’s HPCSA number before access.</figcaption>
+          </figure>
+          <figure class="shot--wide">
+            <button class="shot" type="button"><img src="assets/isiqalo-med-patient.webp" width="1600" height="533" loading="lazy" decoding="async" alt="Patient view of the clinical registry showing only the one record linked to their account, with a View button"></button>
+            <figcaption>A patient sees only the records linked to their own account.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="lessons" aria-labelledby="lessons-title">
+      <div class="wrap">
+        <h2 id="lessons-title">Challenges and lessons learned</h2>
+        <!-- TODO: these come from the project README; rewrite them in your own words and add your personal lessons. -->
+        <div class="cols-2" data-reveal>
+          <div class="panel"><h3>Compliance is a process, not a feature</h3><p>Code can provide the technical controls POPIA expects and the evidence for them, but registering an Information Officer, legal review and staff training sit outside the code. I learnt to say plainly what is done and what is still outstanding.</p></div>
+          <div class="panel"><h3>Concurrency on a single-file database</h3><p>SQLite is simple to run, but concurrent requests could interleave inside one transaction. A serialised transaction queue and WAL journaling solved it.</p></div>
+          <div class="panel"><h3>Large files without large memory</h3><p>Scans can be hundreds of megabytes, so files stream from storage straight to the response or into the ZIP, and every export has caps on size, time and concurrency.</p></div>
+          <div class="panel"><h3>Security details that are easy to miss</h3><p>Login timing is equalised so it does not reveal which accounts exist, CSV exports neutralise formula injection, and signed file tokens are redacted from logs.</p></div>
+        </div>
+        <p class="prose" style="margin-top:1.5rem">Next steps on the roadmap: mandatory two-factor authentication for admins, encrypting the remaining patient fields, key rotation tooling, alerting, and an in-browser viewer for DICOM and STL files.</p>
+      </div>
+    </section>
+
+    <section class="section" id="links" aria-labelledby="links-title">
+      <div class="wrap">
+        <h2 id="links-title">Links</h2>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://github.com/theyyluvpreeths/ISIQALO-MED" rel="noopener">Source code on GitHub</a>
+          <a class="btn btn--ghost" href="projects.html">More projects</a>
+          <a class="btn btn--ghost" href="index.html#contact">Ask me about it</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox" aria-label="Enlarged screenshot">
+    <button class="icon-btn lightbox-close" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <img src="data:," alt="">
+    <p></p>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <p>© 2026 Isiqalo Industries · <strong>Keshav Aditya Preethlal</strong></p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/theyyluvpreeths" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/TODO" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:keshavpreethlal@gmail.com">Email</a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!--
+    Assumptions made for this case study (all content is from the project README and code structure; nothing invented):
+    1. Your role: "project lead and developer" across front end, back end, security and docs, based on your CV. Confirm.
+    2. Timeline: June 2026 (first commit) to present (last commit 28 Oct 2026).
+    3. No live demo exists, so no demo link is shown.
+    4. Screenshots come from your brag-video capture with synthetic demo data; the placeholder
+       "Compliance Index" tile and the admin seed name are cropped out.
+    5. The GitHub repo currently returns 404 to the public (private). Visitors cannot open the source link until it is public.
+    6. Challenges and lessons are taken from README sections, not from your personal account.
+  -->
+</body>
+</html>
